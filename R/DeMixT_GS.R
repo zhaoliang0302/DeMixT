@@ -127,7 +127,7 @@ DeMixT_GS <- function(data.Y, data.N1, data.N2 = NULL,
                       nthread = parallel::detectCores() - 1) {
   
   IF_inverse <- function(m){
-    return(class(try(solve(m),silent=T))=="matrix")
+    return("matrix" %in% class(try(solve(m),silent=T)))
   } 
   ## Creat a folder for saving hessian matrix
   path = getwd()
